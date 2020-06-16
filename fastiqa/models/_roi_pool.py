@@ -212,6 +212,7 @@ class RoIPoolModel(NoRoIPoolModel):
         else:
             rois_data = self.rois.view(-1, 4)  # provide rois to predict patch quality map
         # print(rois)
+        rois_data = rois_data.float()
         """
         idx: [bs*n_rois, 1]
         rois_data: [bs*n_rois, 4]
